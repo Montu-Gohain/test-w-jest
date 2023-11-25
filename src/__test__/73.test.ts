@@ -1,6 +1,6 @@
-import type * as TestFunctions from "../DSA/73";
+import type * as TestFunctions from "../Leetcode/73";
 const { isEqualMatrices, setZeroes } =
-  jest.requireActual<typeof TestFunctions>("../DSA/73.ts");
+  jest.requireActual<typeof TestFunctions>("../Leetcode/73");
 
 describe("Let's Test out our leetcode solution", () => {
   let matrix = [

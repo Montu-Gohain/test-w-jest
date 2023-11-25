@@ -16,6 +16,3 @@ export function generate(numRows: number): number[][] {
   }
   return result;
 }
-
-let ans = generate(5);
-console.log(ans);
