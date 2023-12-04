@@ -7,6 +7,7 @@
     "build": "tsc -p tsconfig.build.json",
     "compile": "tsc",
     "start": "ts-node src/index.ts",
+    "observer": "ts-node src/observer-pattern/index.ts",
     "test": "jest"
   },
   "keywords": [
