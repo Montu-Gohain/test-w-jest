@@ -8,6 +8,7 @@ const config: Config.InitialOptions = {
     "src/**/*.{ts,tsx}",
     "!vendor/**/*.{ts,tsx}",
     "!**/node_modules/**",
+    "!**/observer-pattern/**",
   ],
   coverageProvider: "babel",
   coverageThreshold: {
