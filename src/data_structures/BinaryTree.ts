@@ -61,4 +61,101 @@ export class _BST_<T> {
     }
     return false;
   }
+  min(): T {
+    let current_node: _Node_<T> | null = this.root;
+    while (current_node.left) {
+      current_node = current_node?.left;
+    }
+    return current_node.value;
+  }
+  max(): T {
+    let current_node: _Node_<T> | null = this.root;
+
+    while (current_node.right) {
+      current_node = current_node?.right;
+    }
+    return current_node.value;
+  }
+  // It's Time to traverse the tree
+
+  // 1. DFS
+  // In order : Left -> Root -> Right
+  dfs_in_order(): T[] {
+    let result: T[] = [];
+
+    const traverse = (node: _Node_<T>) => {
+      if (node.left) {
+        traverse(node.left);
+      }
+      result.push(node.value);
+      if (node.right) {
+        traverse(node.right);
+      }
+    };
+
+    traverse(this.root);
+    return result;
+  }
+  // Pre-order : Root -> Left -> Right
+  dfs_pre_order(): T[] {
+    let result: T[] = [];
+
+    const traverse = (node: _Node_<T>) => {
+      result.push(node.value);
+      if (node.left) {
+        traverse(node.left);
+      }
+      if (node.right) {
+        traverse(node.right);
+      }
+    };
+    traverse(this.root);
+
+    return result;
+  }
+
+  // Post order : Left -> Right -> Root
+
+  dfs_post_order(): T[] {
+    let result: T[] = [];
+
+    const traverse = (node: _Node_<T>) => {
+      if (node.left) {
+        traverse(node.left);
+      } else if (node.right) {
+        traverse(node.right);
+      }
+      result.push(node.value);
+    };
+    traverse(this.root);
+
+    return result;
+  }
+
+  //2 . BFS
+
+  bfs(): T[] {
+    let result: T[] = [];
+    let queue: _Node_<T>[] = [];
+
+    queue.push(this.root);
+
+    while (queue.length) {
+      const current_node = queue.shift();
+
+      if (current_node) {
+        result.push(current_node.value);
+
+        if (current_node.left) {
+          queue.push(current_node.left);
+        }
+
+        if (current_node.right) {
+          queue.push(current_node.right);
+        }
+      }
+    }
+
+    return result;
+  }
 }
