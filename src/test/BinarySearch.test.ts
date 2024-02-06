@@ -16,7 +16,7 @@ describe("Test Subject 📝📝📝 : Binary Search", () => {
   });
   test("Test case 🧪🧪🧪 : 3", () => {
     const nums = [1, 2, 3, 4, 5, 54];
-    const res = BinarySearch(nums, 3);
-    expect(res).toBe(2);
+    const res = BinarySearch(nums, 1);
+    expect(res).toBe(0);
   });
 });
