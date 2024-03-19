@@ -25,7 +25,6 @@ export const prime_sieve = (limit: number): number[] => {
       results.push(i);
     }
   }
-
   return results;
 };
 
